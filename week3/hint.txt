@@ -1,0 +1,22 @@
+Address init ex :
+(volatile) address + offset &= ~0000F0000
+
+===
+
+LED 토글간 딜레이 필요
+void delay(uint32_t);
+
+delay(1000000);
+
+void delay(__IO uint32_t nCount) {
+	for(; nCount != 0; nCount --);
+}
+
+=====
+각 port에 RCC clock enable:
+*((volatile unsigned *)0x40021018) != 0x000003C
+3c => 0011 1100
+
+===
+
+y는 핀 번호를 의미
